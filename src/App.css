@@ -1,0 +1,237 @@
+:root {
+  --primary-color: #e50914; /* สีแดงพรีเมียมภาพยนตร์ */
+  --bg-dark: #141414;
+  --surface-dark: #1f1f1f;
+  --text-white: #ffffff;
+  --text-gray: #a3a3a3;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  margin: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+
+.cinestream-app {
+  padding-bottom: 50px;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Containers */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Movie Catalog Badges */
+.catalog-section, .seating-section, .checkout-section {
+  background: var(--surface-dark);
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background: #2b2b2b;
+  border-left: 4px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-badge {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* 8x8 Seat Selector Grid */
+.screen-indicator {
+  background: #444;
+  text-align: center;
+  padding: 8px;
+  margin: 20px auto 40px auto;
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+}
+
+.seat-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row-label {
+  font-weight: bold;
+  width: 25px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+.seat.selected {
+  background-color: var(--primary-color) !important;
+}
+
+.seat.premium {
+  background-color: #9b59b6; /* สีม่วงสำหรับแถวพรีเมียม */
+}
+
+/* Legend colors */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  font-size: 0.9rem;
+}
+
+.legend-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.available-box { background-color: #555; }
+.premium-box { background-color: #9b59b6; }
+.selected-box { background-color: var(--primary-color); }
+
+/* Checkout logic styling */
+.promo-wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 10px 0;
+}
+
+.promo-wrapper input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+}
+
+.promo-wrapper button {
+  padding: 10px 20px;
+  border: none;
+  background: #27ae60;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.discount-success {
+  color: #2ecc71;
+  font-size: 0.9rem;
+}
+
+.pay-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.alert-message {
+  margin-top: 15px;
+  background: rgba(46, 204, 113, 0.2);
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #2ecc71;
+  text-align: center;
+}
